@@ -1,0 +1,50 @@
+1: git clone 遠端 
+
+2: 切換到分支develop  --> git checkout develop
+
+3: 開新分支並切換到該分支底下 
+	
+'feature' --> git checkout -b 'feature'
+
+#ex: git checkout -b simen20170505
+
+======開始做功能=================================
+
+功能1完成 git add -A : 新增全部檔案到緩存
+		  git commit -m "content" 提交
+		  #ex: git commit -m "fix table"
+
+功能2完成 git add -A : 新增全部檔案到緩存
+  		  git commit -m "content" 提交
+  		  #ex: git commit -m "fix table"
+
+
+  		  	..................以此類推 最好不要堆太多
+
+功能完成準備上傳遠端=============================
+
+4: 先回到develop --> git checkout develop
+
+5: 把遠端拉回本地端更新確保版本最新
+
+	-->	git pull origin
+
+6: 合併你的分支與develop
+   
+   --> git merge --no-ff simen20170505 
+
+   --no-ff是比對檔案
+
+   如果有衝突就要手動比對
+
+7: 成功合併之後 上傳遠端
+	
+	--> git push -u origin
+
+8: 此時simen20170505的節點合併玩了 已經沒用了 把她刪掉
+
+	--> git branch -d simen20170505
+9: 再開新節點 回到第一步 開始新工作
+
+	--> git checkout -b simen20170506
+
